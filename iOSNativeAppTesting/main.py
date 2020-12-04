@@ -1,16 +1,12 @@
-# This is a sample Python script.
+import unittest
+from test_cases.TestNumericNumbers import NumericNumbers
+from test_cases.TestDecimalNumbers import DecimalNumbers
+from test_cases.TestOperations import MathOperations
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+numeric_num_tests = unittest.TestLoader().loadTestsFromTestCase(NumericNumbers)
+decimal_num_tests = unittest.TestLoader().loadTestsFromTestCase(DecimalNumbers)
+operations_tests = unittest.TestLoader().loadTestsFromTestCase(MathOperations)
 
+suite = unittest.TestSuite((numeric_num_tests, decimal_num_tests, operations_tests))
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+unittest.TextTestRunner(verbosity=2).run(suite)

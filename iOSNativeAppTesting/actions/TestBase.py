@@ -1,5 +1,4 @@
 import unittest
-
 from appium import webdriver
 
 
@@ -10,7 +9,7 @@ class SetUpClass(unittest.TestCase):
         desired_cap = {
             "deviceName": "iPhone 11",
             "platformName": "iOS",
-            "platformVersion": "14.0",
+            "platformVersion": "14.2",
             "app": "/Users/Jinal/Library/Developer/Xcode/DerivedData/"
                    "CalculatorReplicaSwiftUI-agfoerdfhvadrbdfqzlbdtccyrbq/Build/"
                    "Products/Debug-iphonesimulator/Calculator.app",
